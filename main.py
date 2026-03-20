@@ -5,8 +5,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from services.ai_service import generate_questions, evaluate_answer, final_evaluation
 from services.pdf_parser import extract_text_from_pdf_file, cleanup_temp_file, MAX_FILE_SIZE
+from routes.generate_questions import router as questions_router
 
 app = FastAPI(title="AI Interviewer API", version="2.0.0")
+
+# Include routers
+app.include_router(questions_router)
 
 # CORS middleware
 app.add_middleware(
