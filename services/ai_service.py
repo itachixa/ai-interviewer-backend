@@ -185,7 +185,6 @@ def basic_final_evaluation(answers):
     
     return f"""
 📊 FINAL INTERVIEW REPORT
-=========================
 
 Overall Score: {int(avg)}/100
 
